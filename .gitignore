@@ -1,0 +1,11 @@
+.idea
+.gradle
+*.iml
+/*/out
+/out
+/*/build
+/*/allure-results
+/build
+/build/*
+.DS_Store
+/config/detekt/default-detekt.yml
