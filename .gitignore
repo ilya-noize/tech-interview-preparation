@@ -9,3 +9,4 @@
 /build/*
 .DS_Store
 /config/detekt/default-detekt.yml
+target
