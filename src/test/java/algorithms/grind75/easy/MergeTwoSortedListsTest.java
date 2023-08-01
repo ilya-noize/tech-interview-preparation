@@ -10,11 +10,11 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 class MergeTwoSortedListsTest {
 
-    MergeTwoSortedLists mergeTwoSortedLists = new MergeTwoSortedLists();
+    private final MergeTwoSortedLists mergeTwoSortedLists = new MergeTwoSortedLists();
 
     @ParameterizedTest
     @MethodSource("assignTestData")
-    public void testBruteForeSolution(ListNode listNode1, ListNode listNode2, ListNode result) {
+    public void testRecursiveSolution(ListNode listNode1, ListNode listNode2, ListNode result) {
         ListNode listNode = mergeTwoSortedLists.mergeTwoLists(listNode1, listNode2);
         assertEquals(result, listNode);
     }
