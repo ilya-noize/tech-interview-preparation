@@ -13,8 +13,15 @@ class RansomNoteTest {
 
     @ParameterizedTest
     @MethodSource("assignTestData")
-    public void testBruteForeSolution(String ransomNote, String magazine, boolean result) {
+    public void testHasMapSolution(String ransomNote, String magazine, boolean result) {
         boolean canConstruct = note.canConstruct(ransomNote, magazine);
+        assertEquals(result, canConstruct);
+    }
+
+    @ParameterizedTest
+    @MethodSource("assignTestData")
+    public void testArraySolution(String ransomNote, String magazine, boolean result) {
+        boolean canConstruct = note.canConstructArrayApproach(ransomNote, magazine);
         assertEquals(result, canConstruct);
     }
 

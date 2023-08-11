@@ -43,4 +43,37 @@ public class RansomNote {
 
         return true;
     }
+
+    /**
+     * Optimize space complexity using a single array charCount of size 26 (assuming lowercase
+     * English letters) The index of the array corresponds to the character's position in the
+     * alphabet. This array is used to count the occurrences of characters in both the magazine and
+     * ransomNote strings.
+     * <p>
+     * Time Complexity: O(m+n) where m is the length of the magazine string and n is the length of
+     * the ransomNote string.
+     * Space Complexity: O(1) since the size of the charCount array is constant regardless of the input lengths.
+     */
+    public boolean canConstructArrayApproach(String ransomNote, String magazine) {
+        if (ransomNote == null || magazine == null) {
+            return false;
+        }
+
+        int[] charCount = new int[26]; // Assuming lowercase letters only
+
+        // Count the occurrences of each character in the magazine
+        for (char letter : magazine.toCharArray()) {
+            charCount[letter - 'a']++;
+        }
+
+        // Check if ransomNote can be constructed using the characters from magazine
+        for (char letter : ransomNote.toCharArray()) {
+            if (charCount[letter - 'a'] <= 0) {
+                return false;
+            }
+            charCount[letter - 'a']--;
+        }
+
+        return true;
+    }
 }
