@@ -11,7 +11,7 @@ class FirstBadVersionTest {
 
     @ParameterizedTest
     @MethodSource("assignTestData")
-    public void testBruteForeSolution(int n, int badVersion) {
+    public void testBinarySearchSolution(int n, int badVersion) {
         FirstBadVersion firstBadVersion = new FirstBadVersion(badVersion);
         int result = firstBadVersion.firstBadVersion(n);
         assertEquals(badVersion, result);
